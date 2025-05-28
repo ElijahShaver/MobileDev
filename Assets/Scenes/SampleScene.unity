@@ -157,6 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dodgeSpeed: 5
   rollSpeed: 5
+  horizMovement: 1
+  minScale: 0.5
+  maxScale: 3
+  swipeMove: 2
+  minSwipeDistance: 0.25
 --- !u!54 &43669056
 Rigidbody:
   m_ObjectHideFlags: 0
