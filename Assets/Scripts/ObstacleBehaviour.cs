@@ -17,6 +17,9 @@ public class ObstacleBehaviour : MonoBehaviour
     [Tooltip("Death effect to play when player dies")]
     public GameObject deathEffect;
 
+    [Tooltip("FART NOISE!!!!!!!!!!")]
+    public GameObject fartNoise;
+
     [Tooltip("Obstacle's mesh renderer")]
     public MeshRenderer obstacleMR;
 
@@ -32,9 +35,8 @@ public class ObstacleBehaviour : MonoBehaviour
     {
         if (explosion != null)
         {
-            var particles = Instantiate(explosion,
-            transform.position,
-            Quaternion.identity);
+            var particles = Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(fartNoise, transform.position, Quaternion.identity);
             Destroy(particles, 1.0f);
         }
 
@@ -63,6 +65,7 @@ public class ObstacleBehaviour : MonoBehaviour
             obstacleMR.enabled = false;
 
             // play explosion sound
+            audioSource.pitch = 1;
             audioSource.PlayOneShot(explosionSound);
         }
     }

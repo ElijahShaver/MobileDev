@@ -156,6 +156,7 @@ MonoBehaviour:
   explosion: {fileID: 4494173250527776202, guid: 7deaea667c766454dbf56903f3a7cfc1, type: 3}
   explosionEffect: {fileID: 7813669061767241657, guid: 8344766fcb7ce7d458e5b00fb4f39e5c, type: 3}
   deathEffect: {fileID: 4494173250527776202, guid: 5ec7edd4a0f8e0041a2f3a31fc7a73f8, type: 3}
+  fartNoise: {fileID: 6400398060113767868, guid: 5932dd9421917fe4ab2b82be0921db2f, type: 3}
   obstacleMR: {fileID: 6308536889298656718}
   audioSource: {fileID: 7911151262405180304}
   explosionSound: {fileID: 8300000, guid: fa0d3f4cc58cceb49a5ed0bb3f603cb2, type: 3}

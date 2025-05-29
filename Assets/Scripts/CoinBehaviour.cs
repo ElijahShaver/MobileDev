@@ -44,6 +44,7 @@ public class CoinBehaviour : MonoBehaviour
             coinMR.enabled = false;
 
             // play explosion sound
+            audioSource.pitch = 1;
             audioSource.PlayOneShot(collectSound);
         }
     }
