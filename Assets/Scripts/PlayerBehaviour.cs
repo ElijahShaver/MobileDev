@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerBehaviour : MonoBehaviour
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     [Tooltip("How fast the ball moves left/right")]
     public float dodgeSpeed;

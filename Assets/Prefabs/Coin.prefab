@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5515942592941374491
+--- !u!1 &6905894368986942175
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5172173327242356385}
-  - component: {fileID: 8099895082545113348}
-  - component: {fileID: 6308536889298656718}
+  - component: {fileID: 6097164686659555429}
+  - component: {fileID: 7147953057566367680}
+  - component: {fileID: 4960246764452571914}
   m_Layer: 0
-  m_Name: explosive metal barrel
+  m_Name: coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5172173327242356385
+--- !u!4 &6097164686659555429
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515942592941374491}
+  m_GameObject: {fileID: 6905894368986942175}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.025, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.2693376, z: 0.5}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8486827244487871162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8099895082545113348
+--- !u!33 &7147953057566367680
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515942592941374491}
-  m_Mesh: {fileID: 4026584609969140299, guid: ed0445e703e937a409d718b630cf6986, type: 3}
---- !u!23 &6308536889298656718
+  m_GameObject: {fileID: 6905894368986942175}
+  m_Mesh: {fileID: 6669512820363339668, guid: 693ed79796d448c4e8af10849f39ebfa, type: 3}
+--- !u!23 &4960246764452571914
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515942592941374491}
+  m_GameObject: {fileID: 6905894368986942175}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,8 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 878149fdc0698a045830391962db59b3, type: 2}
-  - {fileID: 2100000, guid: 1204369e4d07b6d4fa30e0cb9275b977, type: 2}
+  - {fileID: 2100000, guid: e235470f4bc9bad4bbc23c4337f1cf84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,10 +93,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8486827244487871162}
   - component: {fileID: 8511121683551852732}
-  - component: {fileID: 7397049479290165671}
+  - component: {fileID: 925893467477955047}
   - component: {fileID: 7911151262405180304}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: Coin
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,10 +112,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0.25}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5172173327242356385}
+  - {fileID: 6097164686659555429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &8511121683551852732
@@ -134,13 +133,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7397049479290165671
+--- !u!114 &925893467477955047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,16 +148,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8140876481907087082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf259c3bf667c7498fad5a2121b058f, type: 3}
+  m_Script: {fileID: 11500000, guid: bd9acfbc8c71d554abf179609fbcbc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectEffect: {fileID: 0}
   waitTime: 2
-  explosion: {fileID: 4494173250527776202, guid: 7deaea667c766454dbf56903f3a7cfc1, type: 3}
-  explosionEffect: {fileID: 7813669061767241657, guid: 8344766fcb7ce7d458e5b00fb4f39e5c, type: 3}
-  deathEffect: {fileID: 4494173250527776202, guid: 5ec7edd4a0f8e0041a2f3a31fc7a73f8, type: 3}
-  obstacleMR: {fileID: 6308536889298656718}
+  coinMR: {fileID: 4960246764452571914}
   audioSource: {fileID: 7911151262405180304}
-  explosionSound: {fileID: 8300000, guid: fa0d3f4cc58cceb49a5ed0bb3f603cb2, type: 3}
+  collectSound: {fileID: 8300000, guid: 5ce5e51afdf544c498d258000432b7e2, type: 3}
 --- !u!82 &7911151262405180304
 AudioSource:
   m_ObjectHideFlags: 0

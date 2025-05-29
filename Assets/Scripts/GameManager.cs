@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     [Tooltip("A reference to the tile we want to spawn")]
     public Transform tile;
 
-    [Tooltip("A reference to the obstacle we want to spawn")]
-    public Transform obstacle;
+    [Tooltip("A reference to the obstacle and coin we want to spawn")]
+    public Transform obstacle, coin;
 
     [Tooltip("Where the first tile should be placed at")]
     public Vector3 startPoint = new Vector3(0, 0, -5);
@@ -87,17 +87,21 @@ public class GameManager : MonoBehaviour
             // Get a random spawn point from the ones we
             // have
             int index = Random.Range(0, obstacleSpawnPoints.Count);
+            int index2 = Random.Range(0, obstacleSpawnPoints.Count);
             var spawnPoint = obstacleSpawnPoints[index];
+            var coinSpawnPoint = obstacleSpawnPoints[index2];
 
             // Store its position for us to use
             var spawnPos = spawnPoint.transform.position;
+            var coinSpawnPos = coinSpawnPoint.transform.position;
 
             // Create our obstacle
-            var newObstacle = Instantiate(obstacle,
-            spawnPos, Quaternion.identity);
+            var newObstacle = Instantiate(obstacle, spawnPos, Quaternion.identity);
+            var newCoin = Instantiate(coin, coinSpawnPos, Quaternion.identity);
 
             // Have it parented to the tile
             newObstacle.SetParent(spawnPoint.transform);
+            newCoin.SetParent(spawnPoint.transform);
         }
     }
 }
