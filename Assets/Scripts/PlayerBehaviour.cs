@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; //TextMeshProUGUI
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerBehaviour : MonoBehaviour
@@ -55,14 +56,56 @@ public class PlayerBehaviour : MonoBehaviour
     /// </summary>
     private Vector2 touchStart;
 
+    [Header("Object References")]
+    public TextMeshProUGUI scoreText;
+    private float score = 0;
+
+    public float Score
+    {
+        get
+        {
+            return score;
+        }
+
+        set
+        {
+            score = value;
+
+            /* Check if scoreText has been assigned */
+            if (scoreText == null)
+            {
+                Debug.LogError("Score Text is not set. " + "Please go to the Inspector and assign it");
+
+                /* If not assigned, don't try to update it. */
+                return;
+            }
+
+            /* Update the text to display the whole number portion of the score */
+            scoreText.text = string.Format("{0:0}", score);
+
+            int highScore = int.Parse(scoreText.text);
+
+            if (PlayerPrefs.GetInt("score") <= highScore)
+            {
+                PlayerPrefs.SetInt("score", highScore);
+
+                Debug.Log("high score is " + highScore);
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("current high score is " + PlayerPrefs.GetInt("score"));
+
         rb = GetComponent<Rigidbody>();
 
         joystick = GameObject.FindObjectOfType<MobileJoystick>();
 
         minSwipeDistancePixels = minSwipeDistance * Screen.dpi;
+
+        Score = 0;
     }
 
     private void Update()
@@ -119,6 +162,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             return;
         }
+
+        Score += Time.deltaTime;
 
         // Check if we're moving to the side
         var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
@@ -361,5 +406,10 @@ public class PlayerBehaviour : MonoBehaviour
             hit.transform.SendMessage("PlayerTouch",
             SendMessageOptions.DontRequireReceiver);
         }
+    }
+
+    public void SetHighScore()
+    {
+
     }
 }
