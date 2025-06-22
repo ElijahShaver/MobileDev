@@ -522,6 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 1232311592}
+  menu: {fileID: 1232311590}
+  otherMenu: {fileID: 953204087}
 --- !u!4 &273675668
 Transform:
   m_ObjectHideFlags: 0
